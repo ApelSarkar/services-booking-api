@@ -1,0 +1,2019 @@
+{
+	"info": {
+		"_postman_id": "4ba49495-9281-4a6b-9d09-f91ab69303fc",
+		"name": "booking-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44256904",
+		"_collection_link": "https://apelsarkar.postman.co/workspace/Apel-Sarkar's-Workspace~1f363d49-f77b-4590-8bde-f5abe140777e/collection/44256904-4ba49495-9281-4a6b-9d09-f91ab69303fc?action=share&source=collection_link&creator=44256904"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"apelsarkar@example.com\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"apelsarkar@example.com\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:33:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"22|EWeMvNU2pxfDdLROjzNiYM0AWaOzogxod60k7v8X6d178289\",\n    \"user\": {\n        \"name\": \"John Doe\",\n        \"email\": \"apelsarkar@example.com\",\n        \"updated_at\": \"2025-07-31T06:33:17.000000Z\",\n        \"created_at\": \"2025-07-31T06:33:17.000000Z\",\n        \"id\": 4\n    }\n}"
+				},
+				{
+					"name": "validation_check",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\",\r\n  \"email\": \"\",\r\n  \"password\": \"\",\r\n  \"password_confirmation\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:59:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The name field is required. (and 2 more errors)\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "email_validation_check",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"apelsarkar@example.com\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 07:01:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The email has already been taken.\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer_login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the response body is valid JSON\r",
+							"if (pm.response.json) {\r",
+							"    let responseData = pm.response.json();\r",
+							"\r",
+							"    // Make sure 'token' exists in your JSON response\r",
+							"    if (responseData && responseData.token) {\r",
+							"        pm.globals.set(\"customer_token\", responseData.token); // Sets to a global variable\r",
+							"        console.log(\"Global variable 'customer_token' set successfully:\", responseData.token);\r",
+							"    } else {\r",
+							"        console.error(\"Token not found in the response body or response is empty.\");\r",
+							"        console.log(\"Full response data:\", responseData); // Log for debugging\r",
+							"    }\r",
+							"} else {\r",
+							"    console.error(\"Response is not valid JSON.\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{customer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"apel@example.com\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/asdsd",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"asdsd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "customer_login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"apel@example.com\",\r\n  \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:33:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"23|GSZ6gs9yEsTNpPukJvugYwommtyyrdaPqvQMpfWx817dfb0f\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"apel@example.com\",\n        \"email_verified_at\": null,\n        \"is_admin\": 0,\n        \"created_at\": \"2025-07-29T10:56:12.000000Z\",\n        \"updated_at\": \"2025-07-29T10:56:12.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "url_not_found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"apel@example.com\",\r\n  \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/asdsd",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								"asdsd"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 07:00:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The requested URL was not found on this server.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "listservice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json(); // <-- define it first\r",
+							"pm.environment.set(\"customer_token\", jsonData.token); // use the correct path to token\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{customer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/services",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"services"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "listservice",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customer/services",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"services"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:36:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Haircut\",\n        \"description\": \"Professional men’s and women’s haircut service.\",\n        \"price\": \"15.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n        \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Manicure\",\n        \"description\": \"Complete hand and nail care service.\",\n        \"price\": \"20.00\",\n        \"status\": \"inactive\",\n        \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n        \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Premium Cleaning Service\",\n        \"description\": \"Deep cleaning for residential properties\",\n        \"price\": \"1500.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2025-07-31T04:55:29.000000Z\",\n        \"updated_at\": \"2025-07-31T04:55:29.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Premium Cleaning Service\",\n        \"description\": \"Deep cleaning for residential properties\",\n        \"price\": \"500.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2025-07-31T05:21:27.000000Z\",\n        \"updated_at\": \"2025-07-31T05:21:27.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Premium Cleaning Service\",\n        \"description\": \"Deep cleaning for residential properties\",\n        \"price\": \"500.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2025-07-31T05:21:28.000000Z\",\n        \"updated_at\": \"2025-07-31T05:21:28.000000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "bookservice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json(); // <-- define it first\r",
+							"pm.environment.set(\"customer_token\", jsonData.token); // use the correct path to token\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{customer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_id\": 3,\r\n    \"booking_date\": \"2025-08-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/bookings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"bookings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "listservice Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service_id\": 3,\r\n    \"booking_date\": \"2025-08-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customer/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"bookings"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:37:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Booking created\",\n    \"booking\": {\n        \"user_id\": 3,\n        \"service_id\": 3,\n        \"booking_date\": \"2025-08-01\",\n        \"updated_at\": \"2025-07-31T06:37:21.000000Z\",\n        \"created_at\": \"2025-07-31T06:37:21.000000Z\",\n        \"id\": 6\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "mybooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json(); // <-- define it first\r",
+							"pm.environment.set(\"customer_token\", jsonData.token); // use the correct path to token\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{customer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_id\": 1,\r\n    \"booking_date\": \"2025-08-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/bookings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"bookings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "mybooking",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service_id\": 1,\r\n    \"booking_date\": \"2025-08-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customer/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"bookings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:37:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 6,\n        \"user_id\": 3,\n        \"service_id\": 3,\n        \"booking_date\": \"2025-08-01\",\n        \"status\": \"pending\",\n        \"created_at\": \"2025-07-31T06:37:21.000000Z\",\n        \"updated_at\": \"2025-07-31T06:37:21.000000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "admin_login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"pm.environment.set(\"admin_token\", jsonData.token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|fXYLDrBTvpddQPlgLY992moe4Xh2yPhCBM2dSRP344acf9ca",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password12\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "admin_login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password12\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:38:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"24|wuDmpNA2YPmi3oXKlLqo9jKDrVmSxrIE9dNxBax9dd3f4d5c\",\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"email_verified_at\": \"2025-07-28T20:59:40.000000Z\",\n        \"is_admin\": 1,\n        \"created_at\": \"2025-07-28T20:56:33.000000Z\",\n        \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "url_not_found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password12\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/asdsd",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								"asdsd"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:59:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The requested URL was not found on this server.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "admin_service_store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the response body is valid JSON\r",
+							"if (pm.response.json) {\r",
+							"    let responseData = pm.response.json();\r",
+							"\r",
+							"    // Make sure 'token' exists in your JSON response\r",
+							"    if (responseData && responseData.token) {\r",
+							"        pm.globals.set(\"admin_token\", responseData.token); // Sets to a global variable\r",
+							"        console.log(\"Global variable 'customer_token' set successfully:\", responseData.token);\r",
+							"    } else {\r",
+							"        console.error(\"Token not found in the response body or response is empty.\");\r",
+							"        console.log(\"Full response data:\", responseData); // Log for debugging\r",
+							"    }\r",
+							"} else {\r",
+							"    console.error(\"Response is not valid JSON.\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/admin/services",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						"services"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "bookservice Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/services",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"services"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:38:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Service created\",\n    \"service\": {\n        \"name\": \"Premium Cleaning Service\",\n        \"description\": \"Deep cleaning for residential properties\",\n        \"price\": 500,\n        \"updated_at\": \"2025-07-31T06:38:28.000000Z\",\n        \"created_at\": \"2025-07-31T06:38:28.000000Z\",\n        \"id\": 9\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update_admin_service_store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the response body is valid JSON\r",
+							"if (pm.response.json) {\r",
+							"    let responseData = pm.response.json();\r",
+							"\r",
+							"    // Make sure 'token' exists in your JSON response\r",
+							"    if (responseData && responseData.token) {\r",
+							"        pm.globals.set(\"admin_token\", responseData.token); // Sets to a global variable\r",
+							"        console.log(\"Global variable 'customer_token' set successfully:\", responseData.token);\r",
+							"    } else {\r",
+							"        console.error(\"Token not found in the response body or response is empty.\");\r",
+							"        console.log(\"Full response data:\", responseData); // Log for debugging\r",
+							"    }\r",
+							"} else {\r",
+							"    console.error(\"Response is not valid JSON.\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"update this field\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/admin/services/9/asdsad",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						"services",
+						"9",
+						"asdsad"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "admin_service_store Copy",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"update this field\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/services/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"services",
+								"9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:39:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Service updated\",\n    \"service\": {\n        \"id\": 9,\n        \"name\": \"update this field\",\n        \"description\": \"Deep cleaning for residential properties\",\n        \"price\": 500,\n        \"status\": \"active\",\n        \"created_at\": \"2025-07-31T06:38:28.000000Z\",\n        \"updated_at\": \"2025-07-31T06:39:07.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "delete_admin_service_store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the response body is valid JSON\r",
+							"if (pm.response.json) {\r",
+							"    let responseData = pm.response.json();\r",
+							"\r",
+							"    // Make sure 'token' exists in your JSON response\r",
+							"    if (responseData && responseData.token) {\r",
+							"        pm.globals.set(\"admin_token\", responseData.token); // Sets to a global variable\r",
+							"        console.log(\"Global variable 'customer_token' set successfully:\", responseData.token);\r",
+							"    } else {\r",
+							"        console.error(\"Token not found in the response body or response is empty.\");\r",
+							"        console.log(\"Full response data:\", responseData); // Log for debugging\r",
+							"    }\r",
+							"} else {\r",
+							"    console.error(\"Response is not valid JSON.\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/admin/services/2000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						"services",
+						"2000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update_admin_service_store Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/services/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"services",
+								"8"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:39:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Resource not found.\"\n}"
+				},
+				{
+					"name": "service_delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/services/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"services",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:39:37 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Service deleted\"\n}"
+				},
+				{
+					"name": "resources _not_found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/services/2000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"services",
+								"2000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:58:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Resource not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get_admin_booking_list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the response body is valid JSON\r",
+							"if (pm.response.json) {\r",
+							"    let responseData = pm.response.json();\r",
+							"\r",
+							"    // Make sure 'token' exists in your JSON response\r",
+							"    if (responseData && responseData.token) {\r",
+							"        pm.globals.set(\"admin_token\", responseData.token); // Sets to a global variable\r",
+							"        console.log(\"Global variable 'customer_token' set successfully:\", responseData.token);\r",
+							"    } else {\r",
+							"        console.error(\"Token not found in the response body or response is empty.\");\r",
+							"        console.log(\"Full response data:\", responseData); // Log for debugging\r",
+							"    }\r",
+							"} else {\r",
+							"    console.error(\"Response is not valid JSON.\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/admin/bookings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						"bookings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete_admin_service_store Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"bookings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:40:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"service_id\": 1,\n            \"booking_date\": \"2025-08-01\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-07-29T13:55:25.000000Z\",\n            \"updated_at\": \"2025-07-29T13:55:25.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"John Doe\",\n                \"email\": \"john@example.com\",\n                \"email_verified_at\": null,\n                \"is_admin\": 0,\n                \"created_at\": \"2025-07-28T20:56:10.000000Z\",\n                \"updated_at\": \"2025-07-28T20:56:10.000000Z\"\n            },\n            \"service\": {\n                \"id\": 1,\n                \"name\": \"Haircut\",\n                \"description\": \"Professional men’s and women’s haircut service.\",\n                \"price\": \"15.00\",\n                \"status\": \"active\",\n                \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n                \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"service_id\": 1,\n            \"booking_date\": \"2025-08-01\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-07-29T13:55:41.000000Z\",\n            \"updated_at\": \"2025-07-29T13:55:41.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"John Doe\",\n                \"email\": \"john@example.com\",\n                \"email_verified_at\": null,\n                \"is_admin\": 0,\n                \"created_at\": \"2025-07-28T20:56:10.000000Z\",\n                \"updated_at\": \"2025-07-28T20:56:10.000000Z\"\n            },\n            \"service\": {\n                \"id\": 1,\n                \"name\": \"Haircut\",\n                \"description\": \"Professional men’s and women’s haircut service.\",\n                \"price\": \"15.00\",\n                \"status\": \"active\",\n                \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n                \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"service_id\": 1,\n            \"booking_date\": \"2025-08-01\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-07-29T13:55:46.000000Z\",\n            \"updated_at\": \"2025-07-29T13:55:46.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"John Doe\",\n                \"email\": \"john@example.com\",\n                \"email_verified_at\": null,\n                \"is_admin\": 0,\n                \"created_at\": \"2025-07-28T20:56:10.000000Z\",\n                \"updated_at\": \"2025-07-28T20:56:10.000000Z\"\n            },\n            \"service\": {\n                \"id\": 1,\n                \"name\": \"Haircut\",\n                \"description\": \"Professional men’s and women’s haircut service.\",\n                \"price\": \"15.00\",\n                \"status\": \"active\",\n                \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n                \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 3,\n            \"service_id\": 3,\n            \"booking_date\": \"2025-08-01\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-07-31T06:37:21.000000Z\",\n            \"updated_at\": \"2025-07-31T06:37:21.000000Z\",\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"John Doe\",\n                \"email\": \"apel@example.com\",\n                \"email_verified_at\": null,\n                \"is_admin\": 0,\n                \"created_at\": \"2025-07-29T10:56:12.000000Z\",\n                \"updated_at\": \"2025-07-29T10:56:12.000000Z\"\n            },\n            \"service\": {\n                \"id\": 3,\n                \"name\": \"Manicure\",\n                \"description\": \"Complete hand and nail care service.\",\n                \"price\": \"20.00\",\n                \"status\": \"inactive\",\n                \"created_at\": \"2025-07-28T20:59:40.000000Z\",\n                \"updated_at\": \"2025-07-28T20:59:40.000000Z\"\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "url_not_fund",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Premium Cleaning Service\",\r\n    \"description\": \"Deep cleaning for residential properties\",\r\n    \"price\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/apel/bookings/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"apel",
+								"bookings",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Jul 2025 06:57:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The requested URL was not found on this server.\"\n}"
+				}
+			]
+		}
+	]
+}
