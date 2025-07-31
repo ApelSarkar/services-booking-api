@@ -31,8 +31,6 @@ This is a RESTful API built with **Laravel 12** for a simple service booking sys
 - PHP >= 8.0
 - Composer
 - MySQL (or other supported DB)
-- Laravel Installer (optional)
-- Laravel Sail or Laragon (optional for dev environment)
 
 ### Installation
 
@@ -61,18 +59,16 @@ This is a RESTful API built with **Laravel 12** for a simple service booking sys
    ```bash
    php artisan key:generate
 
-6. **Run migrations and seeders (Admin credentials and some services will generate) **:
+6. **Run migrations and seeders (Admin credentials and some services will generate)**:
    ```bash
    php artisan migrate --seed
 
-7.**Start the server**
-    ```bash
+6. **Start the server**:
+   ```bash
    php artisan serve
 
-
-
 ### Importent Information 
- -I have added the postman collection and DB with this project, check Postman folder
- -Credential For admin    
+ - I have added the postman collection and DB with this project, check Postman folder
+ - Credential For admin    
     -Email : admin@example.com
     -Pass : password12
